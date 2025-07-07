@@ -1,0 +1,1 @@
+console.log('fake-module electron export');

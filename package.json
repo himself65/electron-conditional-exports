@@ -18,5 +18,8 @@
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^37.2.0"
+  },
+  "dependencies": {
+    "fake-module": "./modules/fake-module"
   }
 }

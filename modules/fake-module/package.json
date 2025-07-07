@@ -1,0 +1,18 @@
+{
+  "name": "fake-module",
+  "version": "1.0.0",
+  "description": "",
+  "exports": {
+    "electron": "./fake-module.electron.js",
+    "node": "./fake-module.node.js",
+    "default": "./fake-module.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/himself65/electron-conditional-exports.git"
+  },
+  "private": true
+}

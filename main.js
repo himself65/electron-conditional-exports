@@ -1,6 +1,10 @@
 // Modules to control application life and create native browser window
 const { app, BrowserWindow } = require('electron')
 const path = require('node:path')
+require('fake-module')
+const { Worker } = require('node:worker_threads')
+
+const worker = new Worker(path.join(__dirname, 'worker.js'))
 
 function createWindow () {
   // Create the browser window.
@@ -37,6 +41,10 @@ app.whenReady().then(() => {
 // explicitly with Cmd + Q.
 app.on('window-all-closed', function () {
   if (process.platform !== 'darwin') app.quit()
+})
+
+app.on('before-quit', () => {
+  worker.terminate().catch(console.error)
 })
 
 // In this file you can include the rest of your app's specific main process
